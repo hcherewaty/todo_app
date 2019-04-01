@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 const express = require('express'),
       port = process.env.PORT || 3030,
       app = express();
@@ -12,9 +14,6 @@ app.get('/happy', (req, res) => {
     res.send('😁👋💫');
 
 });
-
-
-
 
 
 app.listen(port, function() {
