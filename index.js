@@ -4,17 +4,20 @@ require('dotenv').config();
 
 const express = require('express'),
       port = process.env.PORT || 3030,
-      app = express();
+      app = express(),
+      bodyParser = require('body-parser');
+
+
+const todoRoutes = require('./routes/todos');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-     res.send('Hi there!  Server is alive!');
+     res.send('Hello from the root route!');
 });
 
-app.get('/happy', (req, res) => {
-    res.send('😁👋💫');
-
-});
-
+app.use('/api/todos', todoRoutes);
 
 app.listen(port, function() {
     console.log('App is up on port:', port);
