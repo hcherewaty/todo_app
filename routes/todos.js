@@ -1,8 +1,8 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
-const helpers = require('../helpers/todos');
+const express = require('express'),
+      router = express.Router(),
+      helpers = require('../helpers/todos');
 
 router.route('/')
     .get(helpers.getTodos)
