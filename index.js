@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 const express = require('express'),
-      port = process.env.PORT || 3030,
+      port = process.env.PORT,
       app = express(),
       bodyParser = require('body-parser');
 
